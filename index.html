@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Drippy Cee | Official</title>
+
+    <meta
+        name="description"
+        content="Drippy Cee — music, releases, and what's coming next."
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 7%;
+
+            background: rgba(5, 5, 5, 0.88);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .logo span {
+            color: #777;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #1c1c1c 0%,
+                    #080808 35%,
+                    #000 75%
+                );
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.025);
+
+            filter: blur(80px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: #777;
+
+            letter-spacing: 7px;
+
+            font-size: 12px;
+
+            margin-bottom: 20px;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 12vw, 150px);
+
+            line-height: 0.85;
+
+            font-weight: 950;
+
+            letter-spacing: -7px;
+        }
+
+        .hero h1 span {
+            color: #777;
+        }
+
+        .hero p {
+            margin: 35px auto;
+
+            max-width: 550px;
+
+            color: #aaa;
+
+            line-height: 1.7;
+
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            border: 1px solid #444;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 120px 8%;
+        }
+
+        .section-label {
+            color: #666;
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(35px, 6vw, 65px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 50px;
+        }
+
+        /* =========================
+           DRIP EP
+        ========================= */
+
+        .release {
+            background: #090909;
+        }
+
+        .release-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .mystery-box {
+            width: min(420px, 80vw);
+
+            aspect-ratio: 1;
+
+            margin: auto;
+
+            border: 1px solid #333;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #202020 0%,
+                    #080808 65%
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            cursor: pointer;
+
+            transition: 0.5s;
+
+            overflow: hidden;
+        }
+
+        .mystery-box:hover {
+            transform: scale(1.025);
+
+            border-color: #777;
+        }
+
+        .mystery-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 75%;
+            height: 75%;
+
+            border: 1px solid #292929;
+
+            transform: rotate(45deg);
+        }
+
+        .box-icon {
+            font-size: 105px;
+
+            position: relative;
+
+            z-index: 2;
+
+            filter: grayscale(1);
+
+            transition: 0.5s;
+        }
+
+        .mystery-box:hover .box-icon {
+            transform: scale(1.12) rotate(-4deg);
+        }
+
+        .mystery-text {
+            text-align: center;
+        }
+
+        .mystery-text h3 {
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            color: #777;
+
+            margin-bottom: 15px;
+        }
+
+        .mystery-text h2 {
+            font-size: clamp(40px, 6vw, 70px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 20px;
+        }
+
+        .mystery-text p {
+            color: #888;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .hidden-message {
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: 0.5s;
+
+            color: white;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .hidden-message.show {
+            max-height: 100px;
+
+            margin-top: 20px;
+        }
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        .music {
+            background: #000;
+        }
+
+        .music-container {
+            max-width: 950px;
+
+            margin: auto;
+        }
+
+        .spotify-box {
+            border: 1px solid #222;
+
+            padding: 10px;
+
+            background: #080808;
+        }
+
+        iframe {
+            width: 100%;
+
+            height: 352px;
+
+            border: none;
+
+            border-radius: 12px;
+        }
+
+        .music-note {
+            margin-top: 20px;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           POLL
+        ========================= */
+
+        .poll {
+            background: #0a0a0a;
+        }
+
+        .poll-container {
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+        .poll-box {
+            border: 1px solid #292929;
+
+            padding: 40px;
+
+            background: #050505;
+        }
+
+        .poll-box h3 {
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .poll-box > p {
+            color: #777;
+
+            margin-bottom: 30px;
+        }
+
+        .option {
+            display: block;
+
+            padding: 18px;
+
+            margin-bottom: 12px;
+
+            border: 1px solid #252525;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .option:hover {
+            border-color: #666;
+
+            background: #111;
+        }
+
+        .option input {
+            margin-right: 12px;
+        }
+
+        .vote-button {
+            width: 100%;
+
+            padding: 16px;
+
+            background: white;
+
+            color: black;
+
+            border: none;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+
+            transition: 0.3s;
+        }
+
+        .vote-button:hover {
+            background: #bbb;
+        }
+
+        #pollResult {
+            margin-top: 25px;
+
+            color: #aaa;
+
+            line-height: 1.7;
+        }
+
+        /* RESULTS */
+
+        .results {
+            margin-top: 45px;
+
+            border-top: 1px solid #222;
+
+            padding-top: 30px;
+        }
+
+        .results h3 {
+            font-size: 14px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 30px;
+
+            color: #aaa;
+        }
+
+        .result-row {
+            margin-bottom: 22px;
+        }
+
+        .result-info {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        .bar {
+            width: 100%;
+
+            height: 8px;
+
+            background: #1a1a1a;
+
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+
+            width: 0%;
+
+            background: white;
+
+            transition: width 0.7s ease;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+        }
+
+        .about-text {
+            color: #999;
+
+            line-height: 1.9;
+
+            font-size: 16px;
+        }
+
+        .quote {
+            border-left: 2px solid #555;
+
+            padding-left: 25px;
+
+            color: #ccc;
+
+            font-size: 23px;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           PRESS
+        ========================= */
+
+        .press {
+            background: #080808;
+
+            text-align: center;
+        }
+
+        .press-card {
+            max-width: 750px;
+
+            margin: auto;
+
+            padding: 45px;
+
+            border: 1px solid #252525;
+        }
+
+        .press-card h3 {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .press-card p {
+            color: #777;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 60px 8%;
+
+            background: #000;
+
+            border-top: 1px solid #171717;
+
+            text-align: center;
+        }
+
+        footer h2 {
+            letter-spacing: 5px;
+
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #555;
+
+            font-size: 12px;
+        }
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            margin: 25px 0;
+        }
+
+        .socials a {
+            color: #888;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+        .socials a:hover {
+            color: white;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .release-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            section {
+                padding: 90px 6%;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+            .poll-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            DRIPPY <span>CEE</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#music">MUSIC</a>
+            </li>
+
+            <li>
+                <a href="#drip">DRIP EP</a>
+            </li>
+
+            <li>
+                <a href="#poll">POLL</a>
+            </li>
+
+            <li>
+                <a href="#about">ABOUT</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                THE OFFICIAL DRIPPY CEE SITE
+            </div>
+
+            <h1>
+                DRIPPY<br>
+                <span>CEE</span>
+            </h1>
+
+            <p>
+                Music. Chaos. Drip.
+                <br>
+                Enter the world of Drippy Cee.
+            </p>
+
+            <a
+                href="#music"
+                class="button"
+            >
+                LISTEN NOW
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         DRIP EP
+    ========================= -->
+
+    <section
+        class="release"
+        id="drip"
+    >
+
+        <div class="release-grid">
+
+
+            <div
+                class="mystery-box"
+                onclick="openMystery()"
+                title="Click the mystery box"
+            >
+
+                <div class="box-icon">
+                    📦
+                </div>
+
+            </div>
+
+
+            <div class="mystery-text">
+
+                <h3>
+                    SOMETHING IS COMING
+                </h3>
+
+                <h2>
+                    DRIP EP
+                </h2>
+
+                <p>
+                    A new release is on the way.
+                    But what's inside the box?
+                </p>
+
+                <button
+                    class="button"
+                    onclick="openMystery()"
+                >
+                    OPEN THE BOX
+                </button>
+
+                <div
+                    class="hidden-message"
+                    id="mysteryMessage"
+                >
+
+                    👀 YOU'LL HAVE TO WAIT...
+
+                    <br><br>
+
+                    THE DRIP EP IS COMING SOON.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <section
+        class="music"
+        id="music"
+    >
+
+        <div class="music-container">
+
+            <div class="section-label">
+                STREAM
+            </div>
+
+            <h2 class="section-title">
+                LISTEN TO DRIPPY CEE
+            </h2>
+
+            <div class="spotify-box">
+
+                <iframe
+                    src="https://open.spotify.com/embed/artist/5AOZY9Pr4kS0nUbDYn6xYA?utm_source=generator"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+            <p class="music-note">
+                Listen directly through Spotify.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         POLL
+    ========================= -->
+
+    <section
+        class="poll"
+        id="poll"
+    >
+
+        <div class="poll-container">
+
+            <div class="section-label">
+                THE FANS DECIDE
+            </div>
+
+            <h2 class="section-title">
+                WHAT DROPS NEXT?
+            </h2>
+
+
+            <div class="poll-box">
+
+                <h3>
+                    Pick the next song 👀
+                </h3>
+
+                <p>
+                    Let Drippy Cee know what the fans
+                    want to hear next.
+                </p>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="song"
+                        value="Batman"
+                    >
+
+                    Batman
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="song"
+                        value="Cee 2 Drippy"
+                    >
+
+                    Cee 2 Drippy
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="song"
+                        value="New Song"
+                    >
+
+                    A brand-new song
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="song"
+                        value="Drip EP"
+                    >
+
+                    Something from the Drip EP
+
+                </label>
+
+
+                <button
+                    class="vote-button"
+                    onclick="vote()"
+                >
+                    CAST YOUR VOTE
+                </button>
+
+
+                <div id="pollResult"></div>
+
+
+                <!-- LIVE RESULTS -->
+
+                <div class="results">
+
+                    <h3>
+                        LIVE RESULTS
+                    </h3>
+
+
+                    <div class="result-row">
+
+                        <div class="result-info">
+
+                            <span>
+                                Batman
+                            </span>
+
+                            <span id="Batman-percent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="bar">
+
+                            <div
+                                id="Batman-bar"
+                                class="bar-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <div class="result-info">
+
+                            <span>
+                                Cee 2 Drippy
+                            </span>
+
+                            <span id="Cee-percent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="bar">
+
+                            <div
+                                id="Cee-bar"
+                                class="bar-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <div class="result-info">
+
+                            <span>
+                                A brand-new song
+                            </span>
+
+                            <span id="New-percent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="bar">
+
+                            <div
+                                id="New-bar"
+                                class="bar-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <div class="result-info">
+
+                            <span>
+                                Something from the Drip EP
+                            </span>
+
+                            <span id="Drip-percent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="bar">
+
+                            <div
+                                id="Drip-bar"
+                                class="bar-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="about-grid">
+
+
+            <div>
+
+                <div class="section-label">
+                    THE ARTIST
+                </div>
+
+                <h2 class="section-title">
+                    DRIPPY CEE
+                </h2>
+
+                <p class="about-text">
+
+                    Drippy Cee is an underground rap artist
+                    whose music combines personality,
+                    humor and an unmistakable style.
+
+                    <br><br>
+
+                    After Cee 2 Drippy, the next chapter
+                    is already on the way.
+
+                </p>
+
+            </div>
+
+
+            <div class="quote">
+
+                "The next era is going
+                to be different."
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRESS
+    ========================= -->
+
+    <section class="press">
+
+        <div class="press-card">
+
+            <div class="section-label">
+                PRESS
+            </div>
+
+            <h3>
+                READ THE STORY
+            </h3>
+
+            <p>
+
+                Check out the Antler Express feature
+                on Drippy Cee and the story behind
+                the music.
+
+            </p>
+
+            <a
+                href="https://antler.express/16467/entertainment/drippy-cee/"
+                target="_blank"
+                class="button"
+            >
+                READ ARTICLE
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h2>
+            DRIPPY CEE
+        </h2>
+
+
+        <div class="socials">
+
+            <a
+                href="https://open.spotify.com/artist/5AOZY9Pr4kS0nUbDYn6xYA"
+                target="_blank"
+            >
+                SPOTIFY
+            </a>
+
+
+            <a
+                href="https://antler.express/16467/entertainment/drippy-cee/"
+                target="_blank"
+            >
+                PRESS
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 Drippy Cee. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         =========================
+         
+         Everything below is JavaScript.
+         No separate .js file is required.
+    -->
+
+
+    <script>
+
+        /* =========================
+           MYSTERY BOX
+        ========================= */
+
+        function openMystery() {
+
+            const message =
+                document.getElementById(
+                    "mysteryMessage"
+                );
+
+            message.classList.toggle("show");
+
+        }
+
+
+        /* =========================
+           POLL DATA
+        ========================= */
+
+        const defaultPoll = {
+
+            "Batman": 0,
+
+            "Cee 2 Drippy": 0,
+
+            "New Song": 0,
+
+            "Drip EP": 0
+
+        };
+
+
+        let pollVotes =
+            JSON.parse(
+                localStorage.getItem(
+                    "drippyCeePoll"
+                )
+            ) || defaultPoll;
+
+
+        /* =========================
+           UPDATE RESULTS
+        ========================= */
+
+        function updateResults() {
+
+            const total =
+                Object.values(pollVotes)
+                .reduce(
+                    (sum, votes) =>
+                        sum + votes,
+                    0
+                );
+
+
+            Object.keys(pollVotes).forEach(
+                song => {
+
+                    let percentage = 0;
+
+
+                    if (total > 0) {
+
+                        percentage =
+                            Math.round(
+                                (
+                                    pollVotes[song]
+                                    /
+                                    total
+                                ) * 100
+                            );
+
+                    }
+
+
+                    let id = "";
+
+
+                    if (song === "Batman") {
+
+                        id = "Batman";
+
+                    }
+
+
+                    if (song === "Cee 2 Drippy") {
+
+                        id = "Cee";
+
+                    }
+
+
+                    if (song === "New Song") {
+
+                        id = "New";
+
+                    }
+
+
+                    if (song === "Drip EP") {
+
+                        id = "Drip";
+
+                    }
+
+
+                    document.getElementById(
+                        id + "-percent"
+                    ).textContent =
+                        percentage + "%";
+
+
+                    document.getElementById(
+                        id + "-bar"
+                    ).style.width =
+                        percentage + "%";
+
+                }
+            );
+
+        }
+
+
+        /* =========================
+           CAST VOTE
+        ========================= */
+
+        function vote() {
+
+            const selected =
+                document.querySelector(
+                    'input[name="song"]:checked'
+                );
+
+
+            const result =
+                document.getElementById(
+                    "pollResult"
+                );
+
+
+            if (!selected) {
+
+                result.innerHTML =
+                    "Pick a song before voting.";
+
+                return;
+
+            }
+
+
+            const song =
+                selected.value;
+
+
+            pollVotes[song]++;
+
+
+            localStorage.setItem(
+                "drippyCeePoll",
+                JSON.stringify(
+                    pollVotes
+                )
+            );
+
+
+            result.innerHTML =
+                "🔥 Vote submitted for <strong>" +
+                song +
+                "</strong>!";
+
+
+            updateResults();
+
+        }
+
+
+        /* =========================
+           LOAD POLL
+        ========================= */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                updateResults();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
