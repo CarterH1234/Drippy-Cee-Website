@@ -1,1447 +1,1403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Drippy Cee | Official</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Drippy Cee — Official Site</title>
 
-    <meta name="google-site-verification" content="2Nt6F7e-YFizX8y-3PcqbVp852HxOkMyB2yrliScua4" />
+<meta name="google-site-verification" content="2Nt6F7e-YFizX8y-3PcqbVp852HxOkMyB2yrliScua4" />
+
+<link rel="icon" type="image/png" href="drippy-cee-icon.png.jpg">
 
-    <link rel="icon" type="image/png" href="drippy-cee-icon.png.jpg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-    <meta
-        name="description"
-        content="Drippy Cee — music, releases, and what's coming next."
-    >
-
-    <style>
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Inter, Arial, sans-serif;
+    overflow-x: hidden;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: white;
-            overflow-x: hidden;
-        }
+/* NAVIGATION */
 
-        /* =========================
-           NAVIGATION
-        ========================= */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    padding: 18px 5%;
 
-            padding: 0 7%;
+    background: rgba(5,5,5,.75);
+    backdrop-filter: blur(15px);
 
-            background: rgba(5, 5, 5, 0.88);
-            backdrop-filter: blur(15px);
+    border-bottom: 1px solid #222;
+}
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+.logo {
+    font-family: Anton, Impact, sans-serif;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
 
-            z-index: 1000;
-        }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
 
-        .logo {
-            font-size: 21px;
-            font-weight: 900;
-            letter-spacing: 4px;
-        }
+.nav-links a {
+    opacity: .7;
+    transition: .2s;
+}
 
-        .logo span {
-            color: #777;
-        }
+.nav-links a:hover {
+    opacity: 1;
+}
 
-        nav ul {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
+/* HERO */
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            transition: 0.3s;
-        }
+.hero {
+    min-height: 100vh;
 
-        nav a:hover {
-            color: white;
-        }
+    padding: 150px 7% 80px;
 
-        /* =========================
-           HERO
-        ========================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .hero {
-            min-height: 100vh;
+    text-align: center;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    position: relative;
+    overflow: hidden;
 
-            text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,.17),
+            transparent 30%
+        ),
+        #050505;
+}
 
-            position: relative;
+.hero-content {
+    position: relative;
+    z-index: 2;
 
-            padding: 100px 20px;
+    max-width: 1100px;
+    width: 100%;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    #1c1c1c 0%,
-                    #080808 35%,
-                    #000 75%
-                );
-        }
+    margin: 0 auto;
+}
 
-        .hero::before {
-            content: "";
+.kicker {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: #888;
+}
 
-            position: absolute;
+.hero h1 {
+    font-family: Anton, Impact, sans-serif;
 
-            width: 600px;
-            height: 600px;
+    font-size: clamp(80px, 16vw, 220px);
 
-            border-radius: 50%;
+    line-height: .78;
 
-            background: rgba(255,255,255,0.025);
+    letter-spacing: -5px;
 
-            filter: blur(80px);
-        }
+    text-transform: uppercase;
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+    color: #f2f2f2;
 
-        .eyebrow {
-            color: #777;
+    text-shadow:
+        8px 8px 0 #202020;
+}
 
-            letter-spacing: 7px;
+.hero h1 span {
+    color: transparent;
 
-            font-size: 12px;
+    -webkit-text-stroke: 2px white;
+}
 
-            margin-bottom: 20px;
+.hero p {
+    margin: 35px auto 25px;
 
-            text-transform: uppercase;
-        }
+    max-width: 650px;
 
-        .hero h1 {
-            font-size: clamp(60px, 12vw, 150px);
+    color: #999;
 
-            line-height: 0.85;
+    line-height: 1.7;
+}
 
-            font-weight: 950;
+/* BUTTON */
 
-            letter-spacing: -7px;
-        }
+.btn {
+    display: inline-block;
 
-        .hero h1 span {
-            color: #777;
-        }
+    padding: 15px 25px;
 
-        .hero p {
-            margin: 35px auto;
+    background: white;
+    color: black;
 
-            max-width: 550px;
+    font-size: 12px;
+    font-weight: 900;
 
-            color: #aaa;
+    letter-spacing: 2px;
 
-            line-height: 1.7;
+    border: 2px solid white;
 
-            font-size: 16px;
-        }
+    transition: .25s;
+}
 
-        .button {
-            display: inline-block;
+.btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+}
 
-            padding: 15px 28px;
+/* MARQUEE */
 
-            border: 1px solid #444;
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
 
-            color: white;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
 
-            text-decoration: none;
+    padding: 14px 0;
 
-            font-size: 12px;
+    background: #080808;
+}
 
-            letter-spacing: 2px;
+.marquee-track {
+    display: inline-block;
 
-            font-weight: bold;
+    animation: scroll 20s linear infinite;
 
-            background: transparent;
+    font-family: Anton, Impact, sans-serif;
 
-            cursor: pointer;
+    font-size: 25px;
 
-            transition: 0.3s;
-        }
+    letter-spacing: 3px;
 
-        .button:hover {
-            background: white;
-            color: black;
-            border-color: white;
-        }
+    color: #666;
+}
 
-        /* =========================
-           SECTIONS
-        ========================= */
+@keyframes scroll {
 
-        section {
-            padding: 120px 8%;
-        }
+    from {
+        transform: translateX(0);
+    }
 
-        .section-label {
-            color: #666;
+    to {
+        transform: translateX(-50%);
+    }
 
-            font-size: 11px;
+}
 
-            letter-spacing: 5px;
+/* SECTIONS */
 
-            text-transform: uppercase;
+section {
+    padding: 110px 7%;
+}
 
-            margin-bottom: 15px;
-        }
+.section-label {
+    font-size: 11px;
 
-        .section-title {
-            font-size: clamp(35px, 6vw, 65px);
+    letter-spacing: 4px;
 
-            letter-spacing: -3px;
+    font-weight: 900;
 
-            margin-bottom: 50px;
-        }
+    color: #666;
 
-        /* =========================
-           DRIP EP
-        ========================= */
+    margin-bottom: 15px;
+}
 
-        .release {
-            background: #090909;
-        }
+.section-title {
+    font-family: Anton, Impact, sans-serif;
 
-        .release-grid {
-            max-width: 1100px;
+    font-size: clamp(48px, 8vw, 105px);
 
-            margin: auto;
+    line-height: .9;
 
-            display: grid;
+    text-transform: uppercase;
 
-            grid-template-columns: 1fr 1fr;
+    margin-bottom: 45px;
+}
 
-            gap: 80px;
+/* DRIP EP */
 
-            align-items: center;
-        }
+.ep-grid {
+    display: grid;
 
-        .mystery-box {
-            width: min(420px, 80vw);
+    grid-template-columns: 1.1fr .9fr;
 
-            aspect-ratio: 1;
+    gap: 55px;
 
-            margin: auto;
+    align-items: center;
+}
 
-            border: 1px solid #333;
+.mystery {
 
-            background:
-                radial-gradient(
-                    circle,
-                    #202020 0%,
-                    #080808 65%
-                );
+    position: relative;
 
-            display: flex;
+    min-height: 520px;
 
-            align-items: center;
-            justify-content: center;
+    display: flex;
 
-            position: relative;
+    align-items: center;
 
-            cursor: pointer;
+    justify-content: center;
 
-            transition: 0.5s;
+    overflow: hidden;
 
-            overflow: hidden;
-        }
+    border: 1px solid #333;
 
-        .mystery-box:hover {
-            transform: scale(1.025);
+    background: #090909;
 
-            border-color: #777;
-        }
+    cursor: pointer;
+}
 
-        .mystery-box::before {
-            content: "";
+.mystery img {
 
-            position: absolute;
+    position: absolute;
 
-            width: 75%;
-            height: 75%;
+    inset: 0;
 
-            border: 1px solid #292929;
+    width: 100%;
+    height: 100%;
 
-            transform: rotate(45deg);
-        }
+    object-fit: cover;
 
-        .box-icon {
-            font-size: 105px;
+    opacity: .78;
 
-            position: relative;
+    transition: .5s;
+}
 
-            z-index: 2;
+.mystery:hover img {
 
-            filter: grayscale(1);
+    transform: scale(1.035);
 
-            transition: 0.5s;
-        }
+    opacity: 1;
+}
 
-        .mystery-box:hover .box-icon {
-            transform: scale(1.12) rotate(-4deg);
-        }
+.mystery:after {
 
-        .mystery-text {
-            text-align: center;
-        }
+    content: "";
 
-        .mystery-text h3 {
-            font-size: 13px;
+    position: absolute;
 
-            letter-spacing: 4px;
+    inset: 0;
 
-            color: #777;
+    background:
+        linear-gradient(
+            180deg,
+            transparent 20%,
+            rgba(0,0,0,.9)
+        );
+}
 
-            margin-bottom: 15px;
-        }
+.box-text {
 
-        .mystery-text h2 {
-            font-size: clamp(40px, 6vw, 70px);
+    position: relative;
 
-            letter-spacing: -3px;
+    z-index: 2;
 
-            margin-bottom: 20px;
-        }
+    text-align: center;
 
-        .mystery-text p {
-            color: #888;
+    padding: 30px;
 
-            line-height: 1.7;
+    margin-top: 240px;
+}
 
-            margin-bottom: 25px;
-        }
+.box-icon {
+    font-size: 42px;
 
-        .hidden-message {
-            max-height: 0;
+    margin-bottom: 12px;
+}
 
-            overflow: hidden;
+.box-text h3 {
 
-            transition: 0.5s;
+    font-family: Anton;
 
-            color: white;
+    font-size: 44px;
 
-            font-weight: bold;
+    text-transform: uppercase;
+}
 
-            letter-spacing: 2px;
-        }
+.box-text p {
 
-        .hidden-message.show {
-            max-height: 100px;
+    color: #aaa;
 
-            margin-top: 20px;
-        }
+    margin-top: 8px;
 
-        /* =========================
-           MUSIC
-        ========================= */
+    font-size: 13px;
+}
 
-        .music {
-            background: #000;
-        }
+.reveal {
 
-        .music-container {
-            max-width: 950px;
+    display: none;
 
-            margin: auto;
-        }
+    margin-top: 15px;
 
-        .spotify-box {
-            border: 1px solid #222;
+    font-weight: 900;
 
-            padding: 10px;
+    letter-spacing: 2px;
 
-            background: #080808;
-        }
+    font-size: 12px;
+}
 
-        iframe {
-            width: 100%;
+.reveal.show {
+    display: block;
+}
 
-            height: 352px;
+.ep-copy h3 {
 
-            border: none;
+    font-family: Anton;
 
-            border-radius: 12px;
-        }
+    font-size: 55px;
 
-        .music-note {
-            margin-top: 20px;
+    text-transform: uppercase;
+}
 
-            color: #666;
+.ep-copy p {
 
-            font-size: 12px;
-        }
+    color: #aaa;
 
-        /* =========================
-           POLL
-        ========================= */
+    line-height: 1.8;
 
-        .poll {
-            background: #0a0a0a;
-        }
+    margin: 18px 0 25px;
+}
 
-        .poll-container {
-            max-width: 750px;
+.tag {
 
-            margin: auto;
-        }
+    display: inline-block;
 
-        .poll-box {
-            border: 1px solid #292929;
+    border: 1px solid #555;
 
-            padding: 40px;
+    padding: 8px 12px;
 
-            background: #050505;
-        }
+    font-size: 10px;
 
-        .poll-box h3 {
-            font-size: 28px;
+    letter-spacing: 2px;
 
-            margin-bottom: 10px;
-        }
+    font-weight: 900;
 
-        .poll-box > p {
-            color: #777;
+    margin-bottom: 20px;
+}
 
-            margin-bottom: 30px;
-        }
+/* MUSIC */
 
-        .option {
-            display: block;
+.music-wrap {
 
-            padding: 18px;
+    max-width: 1100px;
 
-            margin-bottom: 12px;
+    margin: auto;
+}
 
-            border: 1px solid #252525;
+.spotify {
 
-            cursor: pointer;
+    display: block;
 
-            transition: 0.3s;
-        }
+    width: 100%;
 
-        .option:hover {
-            border-color: #666;
+    height: 500px;
 
-            background: #111;
-        }
+    border: 1px solid #222;
 
-        .option input {
-            margin-right: 12px;
-        }
+    border-radius: 16px;
 
-        .vote-button {
-            width: 100%;
+    background: #111;
 
-            padding: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
 
-            background: white;
+/* POLL */
 
-            color: black;
+.poll {
 
-            border: none;
+    max-width: 850px;
 
-            font-weight: bold;
+    border: 1px solid #292929;
 
-            letter-spacing: 2px;
+    background:
+        linear-gradient(
+            145deg,
+            #0c0c0c,
+            #080808
+        );
 
-            cursor: pointer;
+    padding: 40px;
+}
 
-            margin-top: 10px;
+.poll h3 {
 
-            transition: 0.3s;
-        }
+    font-family: Anton;
 
-        .vote-button:hover {
-            background: #bbb;
-        }
+    font-size: 48px;
 
-        #pollResult {
-            margin-top: 25px;
+    text-transform: uppercase;
+}
 
-            color: #aaa;
+.poll-sub {
 
-            line-height: 1.7;
-        }
+    color: #888;
 
-        /* RESULTS */
+    margin: 8px 0 28px;
+}
 
-        .results {
-            margin-top: 45px;
+.option {
 
-            border-top: 1px solid #222;
+    display: flex;
 
-            padding-top: 30px;
-        }
+    align-items: center;
 
-        .results h3 {
-            font-size: 14px;
+    gap: 13px;
 
-            letter-spacing: 3px;
+    padding: 16px 0;
 
-            margin-bottom: 30px;
+    border-bottom: 1px solid #202020;
 
-            color: #aaa;
-        }
+    cursor: pointer;
+}
 
-        .result-row {
-            margin-bottom: 22px;
-        }
+.option input {
 
-        .result-info {
-            display: flex;
+    accent-color: white;
 
-            justify-content: space-between;
+    width: 17px;
 
-            margin-bottom: 8px;
+    height: 17px;
+}
 
-            color: #aaa;
+.option span {
 
-            font-size: 13px;
-        }
+    font-weight: 700;
+}
 
-        .bar {
-            width: 100%;
+.vote-button {
 
-            height: 8px;
+    margin-top: 25px;
 
-            background: #1a1a1a;
+    width: 100%;
 
-            overflow: hidden;
-        }
+    padding: 17px;
 
-        .bar-fill {
-            height: 100%;
+    border: 0;
 
-            width: 0%;
+    background: white;
 
-            background: white;
+    color: black;
 
-            transition: width 0.7s ease;
-        }
+    font-weight: 900;
 
-        /* =========================
-           ABOUT
-        ========================= */
+    letter-spacing: 2px;
 
-        .about-grid {
-            max-width: 1000px;
+    cursor: pointer;
+}
 
-            margin: auto;
+.vote-button:hover {
 
-            display: grid;
+    background: #ccc;
+}
 
-            grid-template-columns: 1fr 1fr;
+#pollResult {
 
-            gap: 80px;
-        }
+    margin-top: 15px;
 
-        .about-text {
-            color: #999;
+    min-height: 22px;
 
-            line-height: 1.9;
+    font-size: 13px;
+}
 
-            font-size: 16px;
-        }
+.results {
 
-        .quote {
-            border-left: 2px solid #555;
+    margin-top: 30px;
+}
 
-            padding-left: 25px;
+.result-row {
 
-            color: #ccc;
+    margin: 17px 0;
+}
 
-            font-size: 23px;
+.result-head {
 
-            line-height: 1.5;
-        }
+    display: flex;
 
-        /* =========================
-           PRESS
-        ========================= */
+    justify-content: space-between;
 
-        .press {
-            background: #080808;
+    font-size: 12px;
 
-            text-align: center;
-        }
+    font-weight: 800;
 
-        .press-card {
-            max-width: 750px;
+    margin-bottom: 7px;
+}
 
-            margin: auto;
+.bar-bg {
 
-            padding: 45px;
+    height: 7px;
 
-            border: 1px solid #252525;
-        }
+    background: #202020;
 
-        .press-card h3 {
-            font-size: 28px;
+    overflow: hidden;
+}
 
-            margin-bottom: 15px;
-        }
+.bar {
 
-        .press-card p {
-            color: #777;
+    height: 100%;
 
-            line-height: 1.7;
+    width: 0;
 
-            margin-bottom: 25px;
-        }
+    background: white;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    transition: width .5s ease;
+}
 
-        footer {
-            padding: 60px 8%;
+/* ABOUT */
 
-            background: #000;
+.about {
 
-            border-top: 1px solid #171717;
+    display: grid;
 
-            text-align: center;
-        }
+    grid-template-columns: 1fr 1fr;
 
-        footer h2 {
-            letter-spacing: 5px;
+    gap: 50px;
 
-            margin-bottom: 20px;
-        }
+    border-top: 1px solid #222;
+}
 
-        footer p {
-            color: #555;
+.about p {
 
-            font-size: 12px;
-        }
+    color: #aaa;
 
-        .socials {
-            display: flex;
+    line-height: 1.9;
+}
 
-            justify-content: center;
+/* PRESS */
 
-            gap: 25px;
+.press-card {
 
-            margin: 25px 0;
-        }
+    border: 1px solid #292929;
 
-        .socials a {
-            color: #888;
+    padding: 30px;
 
-            text-decoration: none;
+    display: flex;
 
-            font-size: 12px;
+    justify-content: space-between;
 
-            letter-spacing: 2px;
-        }
+    align-items: center;
+}
 
-        .socials a:hover {
-            color: white;
-        }
+.press-card small {
 
-        /* =========================
-           MOBILE
-        ========================= */
+    color: #777;
 
-        @media (max-width: 800px) {
+    letter-spacing: 2px;
+}
 
-            nav {
-                padding: 0 5%;
-            }
+.press-card strong {
 
-            nav ul {
-                gap: 12px;
-            }
+    font-size: 22px;
+}
 
-            nav a {
-                font-size: 10px;
-            }
+/* FOOTER */
 
-            .release-grid,
-            .about-grid {
-                grid-template-columns: 1fr;
+footer {
 
-                gap: 50px;
-            }
+    border-top: 1px solid #222;
 
-            section {
-                padding: 90px 6%;
-            }
+    padding: 40px 7%;
 
-            .hero h1 {
-                letter-spacing: -4px;
-            }
+    display: flex;
 
-            .poll-box {
-                padding: 25px;
-            }
+    justify-content: space-between;
 
-        }
+    color: #666;
 
-    </style>
+    font-size: 11px;
 
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero h1 {
+        font-size: 21vw;
+    }
+
+    .ep-grid,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .mystery {
+        min-height: 420px;
+    }
+
+    .spotify {
+        height: 430px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .poll {
+        padding: 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<nav class="nav">
 
-    <nav>
+    <a class="logo" href="#top">
+        DRIPPY CEE
+    </a>
 
-        <div class="logo">
-            DRIPPY <span>CEE</span>
+    <div class="nav-links">
+
+        <a href="#music">
+            MUSIC
+        </a>
+
+        <a href="#drip-ep">
+            DRIP EP
+        </a>
+
+        <a href="#poll">
+            POLL
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="top">
+
+    <div class="hero-content">
+
+        <div class="kicker">
+            NEW MUSIC • DRIP EP • COMING SOON
         </div>
 
-        <ul>
+        <h1>
+            DRIPPY<br>
+            <span>CEE</span>
+        </h1>
 
-            <li>
-                <a href="#music">MUSIC</a>
-            </li>
+        <p>
+            Welcome to the official Drippy Cee site.
+            Listen to the music, check out the upcoming
+            Drip EP, and vote for what should drop next.
+        </p>
 
-            <li>
-                <a href="#drip">DRIP EP</a>
-            </li>
+        <a class="btn" href="#music">
+            LISTEN NOW
+        </a>
 
-            <li>
-                <a href="#poll">POLL</a>
-            </li>
+    </div>
 
-            <li>
-                <a href="#about">ABOUT</a>
-            </li>
-
-        </ul>
-
-    </nav>
+</header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+<!-- MARQUEE -->
 
-    <header class="hero">
+<div class="marquee">
 
-        <div class="hero-content">
+    <div class="marquee-track">
 
-            <div class="eyebrow">
-                THE OFFICIAL DRIPPY CEE SITE
-            </div>
+        DRIPPY CEE ✦
+        DRIP EP ✦
+        NEW MUSIC ✦
+        DRIPPY CEE ✦
+        DRIP EP ✦
+        NEW MUSIC ✦
+        DRIPPY CEE ✦
+        DRIP EP ✦
+        NEW MUSIC ✦
 
-            <h1>
-                DRIPPY<br>
-                <span>CEE</span>
-            </h1>
+    </div>
 
-            <p>
-                Music. Chaos. Drip.
-                <br>
-                Enter the world of Drippy Cee.
-            </p>
+</div>
 
-            <a
-                href="#music"
-                class="button"
+
+<!-- DRIP EP -->
+
+<section id="drip-ep">
+
+    <div class="section-label">
+        01 / UPCOMING
+    </div>
+
+    <div class="section-title">
+        THE DRIP EP
+    </div>
+
+
+    <div class="ep-grid">
+
+        <div
+            class="mystery"
+            onclick="revealEP()"
+        >
+
+            <img
+                src="Drippy Pee (1) (1).png"
+                alt="Drippy Cee Drip EP"
             >
-                LISTEN NOW
-            </a>
 
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         DRIP EP
-    ========================= -->
-
-    <section
-        class="release"
-        id="drip"
-    >
-
-        <div class="release-grid">
-
-
-            <div
-                class="mystery-box"
-                onclick="openMystery()"
-                title="Click the mystery box"
-            >
+            <div class="box-text">
 
                 <div class="box-icon">
                     📦
                 </div>
 
-            </div>
-
-
-            <div class="mystery-text">
-
                 <h3>
-                    SOMETHING IS COMING
+                    Mystery Drop
                 </h3>
 
-                <h2>
-                    DRIP EP
-                </h2>
-
                 <p>
-                    A new release is on the way.
-                    But what's inside the box?
+                    CLICK TO UNLOCK THE DRIP EP
                 </p>
-
-                <button
-                    class="button"
-                    onclick="openMystery()"
-                >
-                    OPEN THE BOX
-                </button>
 
                 <div
-                    class="hidden-message"
-                    id="mysteryMessage"
+                    class="reveal"
+                    id="epReveal"
                 >
-
-                    👀 YOU'LL HAVE TO WAIT...
-
-                    <br><br>
-
                     THE DRIP EP IS COMING SOON.
-
                 </div>
 
             </div>
 
         </div>
 
-    </section>
 
+        <div class="ep-copy">
 
-    <!-- =========================
-         MUSIC
-    ========================= -->
-
-    <section
-        class="music"
-        id="music"
-    >
-
-        <div class="music-container">
-
-            <div class="section-label">
-                STREAM
-            </div>
-
-            <h2 class="section-title">
-                LISTEN TO DRIPPY CEE
-            </h2>
-
-            <div class="spotify-box">
-
-                <iframe
-                    src="https://open.spotify.com/embed/artist/5AOZY9Pr4kS0nUbDYn6xYA?utm_source=generator"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy">
-                </iframe>
-
-            </div>
-
-            <p class="music-note">
-                Listen directly through Spotify.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         POLL
-    ========================= -->
-
-    <section
-        class="poll"
-        id="poll"
-    >
-
-        <div class="poll-container">
-
-            <div class="section-label">
-                THE FANS DECIDE
-            </div>
-
-            <h2 class="section-title">
-                WHAT DROPS NEXT?
-            </h2>
-
-
-            <div class="poll-box">
-
-                <h3>
-                    Pick the next song 👀
-                </h3>
-
-                <p>
-                    Let Drippy Cee know what the fans
-                    want to hear next.
-                </p>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="song"
-                        value="Dr. Seuss"
-                    >
-
-                    Dr. Seuss
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="song"
-                        value="Blue Fish"
-                    >
-
-                    Blue Fish
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="song"
-                        value="LA LA"
-                    >
-
-                    LA LA
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="song"
-                        value="Other"
-                    >
-
-                    Other
-
-                </label>
-
-
-                <button
-                    class="vote-button"
-                    onclick="vote()"
-                >
-                    CAST YOUR VOTE
-                </button>
-
-
-                <div id="pollResult"></div>
-
-
-                <!-- LIVE RESULTS -->
-
-                <div class="results">
-
-                    <h3>
-                        LIVE RESULTS
-                    </h3>
-
-
-                    <div class="result-row">
-
-                        <div class="result-info">
-
-                            <span>
-                                Dr. Seuss
-                            </span>
-
-                            <span id="Dr-percent">
-                                0%
-                            </span>
-
-                        </div>
-
-                        <div class="bar">
-
-                            <div
-                                id="Dr-bar"
-                                class="bar-fill"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="result-row">
-
-                        <div class="result-info">
-
-                            <span>
-                                Blue Fish
-                            </span>
-
-                            <span id="Blue-percent">
-                                0%
-                            </span>
-
-                        </div>
-
-                        <div class="bar">
-
-                            <div
-                                id="Blue-bar"
-                                class="bar-fill"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="result-row">
-
-                        <div class="result-info">
-
-                            <span>
-                                LA LA
-                            </span>
-
-                            <span id="LA-percent">
-                                0%
-                            </span>
-
-                        </div>
-
-                        <div class="bar">
-
-                            <div
-                                id="LA-bar"
-                                class="bar-fill"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="result-row">
-
-                        <div class="result-info">
-
-                            <span>
-                                Other
-                            </span>
-
-                            <span id="Other-percent">
-                                0%
-                            </span>
-
-                        </div>
-
-                        <div class="bar">
-
-                            <div
-                                id="Other-bar"
-                                class="bar-fill"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section id="about">
-
-        <div class="about-grid">
-
-
-            <div>
-
-                <div class="section-label">
-                    THE ARTIST
-                </div>
-
-                <h2 class="section-title">
-                    DRIPPY CEE
-                </h2>
-
-                <p class="about-text">
-
-                    Drippy Cee is an underground rap artist
-                    whose music combines personality,
-                    humor and an unmistakable style.
-
-                    <br><br>
-
-                    After Cee 2 Drippy, the next chapter
-                    is already on the way.
-
-                </p>
-
-            </div>
-
-
-            <div class="quote">
-
-                "The next era is going
-                to be different."
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PRESS
-    ========================= -->
-
-    <section class="press">
-
-        <div class="press-card">
-
-            <div class="section-label">
-                PRESS
+            <div class="tag">
+                COMING SOON
             </div>
 
             <h3>
-                READ THE STORY
+                Something is dripping.
             </h3>
 
             <p>
-
-                Check out the Antler Express feature
-                on Drippy Cee and the story behind
-                the music.
-
+                The next era is on the way.
+                Tap the mystery box to reveal
+                the message and stay tuned for
+                the Drip EP.
             </p>
 
             <a
-                href="https://antler.express/16467/entertainment/drippy-cee/"
-                target="_blank"
-                class="button"
+                class="btn"
+                href="#poll"
             >
-                READ ARTICLE
+                VOTE FOR THE NEXT DROP
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<!-- MUSIC -->
 
-    <footer>
+<section id="music">
 
-        <h2>
-            DRIPPY CEE
-        </h2>
+    <div class="section-label">
+        02 / LISTEN
+    </div>
 
+    <div class="section-title">
+        MUSIC
+    </div>
 
-        <div class="socials">
+    <div class="music-wrap">
+
+        <iframe
+            class="spotify"
+            src="https://open.spotify.com/embed/artist/5AOZY9Pr4kS0nUbDYn6xYA?utm_source=generator"
+            title="Drippy Cee on Spotify"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+        <div style="text-align:center;margin-top:18px">
 
             <a
+                class="btn"
                 href="https://open.spotify.com/artist/5AOZY9Pr4kS0nUbDYn6xYA"
                 target="_blank"
             >
-                SPOTIFY
-            </a>
-
-
-            <a
-                href="https://antler.express/16467/entertainment/drippy-cee/"
-                target="_blank"
-            >
-                PRESS
+                OPEN DRIPPY CEE ON SPOTIFY
             </a>
 
         </div>
 
+    </div>
+
+</section>
+
+
+<!-- POLL -->
+
+<section id="poll">
+
+    <div class="section-label">
+        03 / YOUR PICK
+    </div>
+
+    <div class="section-title">
+        WHAT SHOULD DROP NEXT?
+    </div>
+
+
+    <div class="poll">
+
+        <h3>
+            Choose one.
+        </h3>
+
+        <div class="poll-sub">
+            Pick the song you want to hear next.
+        </div>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="song"
+                value="Dr. Seuss"
+            >
+
+            <span>
+                Dr. Seuss
+            </span>
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="song"
+                value="Blue Fish"
+            >
+
+            <span>
+                Blue Fish
+            </span>
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="song"
+                value="La La"
+            >
+
+            <span>
+                La La
+            </span>
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="song"
+                value="Other"
+            >
+
+            <span>
+                Other
+            </span>
+
+        </label>
+
+
+        <button
+            class="vote-button"
+            onclick="vote()"
+        >
+            CAST YOUR VOTE
+        </button>
+
+
+        <div id="pollResult"></div>
+
+
+        <div class="results">
+
+            <div class="result-row">
+
+                <div class="result-head">
+
+                    <span>
+                        Dr. Seuss
+                    </span>
+
+                    <span id="Seuss-percent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="bar-bg">
+
+                    <div
+                        class="bar"
+                        id="Seuss-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-row">
+
+                <div class="result-head">
+
+                    <span>
+                        Blue Fish
+                    </span>
+
+                    <span id="Blue-percent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="bar-bg">
+
+                    <div
+                        class="bar"
+                        id="Blue-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-row">
+
+                <div class="result-head">
+
+                    <span>
+                        La La
+                    </span>
+
+                    <span id="LaLa-percent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="bar-bg">
+
+                    <div
+                        class="bar"
+                        id="LaLa-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-row">
+
+                <div class="result-head">
+
+                    <span>
+                        Other
+                    </span>
+
+                    <span id="Other-percent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="bar-bg">
+
+                    <div
+                        class="bar"
+                        id="Other-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <div>
+
+        <div class="section-label">
+            04 / ABOUT
+        </div>
+
+        <div class="section-title">
+            DRIPPY<br>
+            CEE
+        </div>
+
+    </div>
+
+
+    <div>
 
         <p>
-            © 2026 Drippy Cee. All rights reserved.
+            Welcome to the Drippy Cee website —
+            the home for music, upcoming releases,
+            and whatever comes next.
+            Check back for updates on the Drip EP
+            and new drops.
         </p>
 
-    </footer>
+        <br>
+
+        <a
+            class="btn"
+            href="https://open.spotify.com/artist/5AOZY9Pr4kS0nUbDYn6xYA"
+            target="_blank"
+        >
+            OPEN SPOTIFY
+        </a>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         JAVASCRIPT
-         =========================
-         
-         Everything below is JavaScript.
-         No separate .js file is required.
-    -->
+<!-- PRESS -->
+
+<section>
+
+    <div class="section-label">
+        05 / PRESS
+    </div>
+
+    <div class="press-card">
+
+        <div>
+
+            <small>
+                FEATURE
+            </small>
+
+            <br>
+
+            <strong>
+                Drippy Cee — Antler Express
+            </strong>
+
+        </div>
+
+        <a
+            class="btn"
+            href="https://antler.express/16467/entertainment/drippy-cee/"
+            target="_blank"
+        >
+            READ
+        </a>
+
+    </div>
+
+</section>
 
 
-    <script>
+<!-- FOOTER -->
 
-        /* =========================
-           MYSTERY BOX
-        ========================= */
+<footer>
 
-        function openMystery() {
+    <span>
+        © 2026 DRIPPY CEE
+    </span>
 
-            const message =
-                document.getElementById(
-                    "mysteryMessage"
-                );
+    <span>
+        DRIP EP — COMING SOON
+    </span>
 
-            message.classList.toggle("show");
+</footer>
+
+
+<script>
+
+/* MYSTERY BOX */
+
+function revealEP() {
+
+    document
+        .getElementById("epReveal")
+        .classList
+        .toggle("show");
+
+}
+
+
+/* POLL */
+
+const POLL_KEY = "drippyCeePollV2";
+
+const defaultPoll = {
+
+    "Dr. Seuss": 0,
+
+    "Blue Fish": 0,
+
+    "La La": 0,
+
+    "Other": 0
+
+};
+
+
+let pollVotes = null;
+
+
+try {
+
+    pollVotes = JSON.parse(
+        localStorage.getItem(POLL_KEY)
+    );
+
+} catch(error) {
+
+    pollVotes = null;
+
+}
+
+
+if (
+    !pollVotes ||
+    typeof pollVotes !== "object"
+) {
+
+    pollVotes = {
+        ...defaultPoll
+    };
+
+}
+
+
+Object.keys(defaultPoll).forEach(
+    function(key) {
+
+        if (
+            typeof pollVotes[key] !== "number" ||
+            !Number.isFinite(pollVotes[key]) ||
+            pollVotes[key] < 0
+        ) {
+
+            pollVotes[key] = 0;
 
         }
 
+    }
+);
 
-        /* =========================
-           POLL DATA
-        ========================= */
 
-        const defaultPoll = {
+function updateResults() {
 
-            "Dr. Seuss": 0,
+    const total =
+        Object.values(pollVotes)
+        .reduce(
+            function(sum, value) {
 
-            "Blue Fish": 0,
+                return sum + value;
 
-            "LA LA": 0,
-
-            "Other": 0
-
-        };
-
-
-        let pollVotes =
-            JSON.parse(
-                localStorage.getItem(
-                    "drippyCeePoll"
-                )
-            ) || defaultPoll;
-
-
-        /* =========================
-           UPDATE RESULTS
-        ========================= */
-
-        function updateResults() {
-
-            const total =
-                Object.values(pollVotes)
-                .reduce(
-                    (sum, votes) =>
-                        sum + votes,
-                    0
-                );
-
-
-            Object.keys(pollVotes).forEach(
-                song => {
-
-                    let percentage = 0;
-
-
-                    if (total > 0) {
-
-                        percentage =
-                            Math.round(
-                                (
-                                    pollVotes[song]
-                                    /
-                                    total
-                                ) * 100
-                            );
-
-                    }
-
-
-                    let id = "";
-
-
-                    if (song === "Dr. Seuss") {
-
-                        id = "Dr";
-
-                    }
-
-
-                    if (song === "Blue Fish") {
-
-                        id = "Blue";
-
-                    }
-
-
-                    if (song === "LA LA") {
-
-                        id = "LA";
-
-                    }
-
-
-                    if (song === "Other") {
-
-                        id = "Other";
-
-                    }
-
-
-                    document.getElementById(
-                        id + "-percent"
-                    ).textContent =
-                        percentage + "%";
-
-
-                    document.getElementById(
-                        id + "-bar"
-                    ).style.width =
-                        percentage + "%";
-
-                }
-            );
-
-        }
-
-
-        /* =========================
-           CAST VOTE
-        ========================= */
-
-        function vote() {
-
-            const selected =
-                document.querySelector(
-                    'input[name="song"]:checked'
-                );
-
-
-            const result =
-                document.getElementById(
-                    "pollResult"
-                );
-
-
-            if (!selected) {
-
-                result.innerHTML =
-                    "Pick a song before voting.";
-
-                return;
-
-            }
-
-
-            const song =
-                selected.value;
-
-
-            pollVotes[song]++;
-
-
-            localStorage.setItem(
-                "drippyCeePoll",
-                JSON.stringify(
-                    pollVotes
-                )
-            );
-
-
-            result.innerHTML =
-                "🔥 Vote submitted for <strong>" +
-                song +
-                "</strong>!";
-
-
-            updateResults();
-
-        }
-
-
-        /* =========================
-           LOAD POLL
-        ========================= */
-
-        window.addEventListener(
-            "load",
-            function() {
-
-                updateResults();
-
-            }
+            },
+            0
         );
 
-    </script>
+
+    const choices = [
+
+        ["Dr. Seuss", "Seuss"],
+
+        ["Blue Fish", "Blue"],
+
+        ["La La", "LaLa"],
+
+        ["Other", "Other"]
+
+    ];
+
+
+    choices.forEach(
+        function(choice) {
+
+            const name = choice[0];
+
+            const id = choice[1];
+
+
+            const percent =
+                total === 0
+                ? 0
+                : Math.round(
+                    (pollVotes[name] / total) * 100
+                );
+
+
+            document
+                .getElementById(id + "-percent")
+                .textContent =
+                percent + "%";
+
+
+            document
+                .getElementById(id + "-bar")
+                .style.width =
+                percent + "%";
+
+        }
+    );
+
+}
+
+
+function vote() {
+
+    const selected =
+        document.querySelector(
+            'input[name="song"]:checked'
+        );
+
+
+    const result =
+        document.getElementById(
+            "pollResult"
+        );
+
+
+    if (!selected) {
+
+        result.textContent =
+            "Pick a song before voting.";
+
+        return;
+
+    }
+
+
+    const song =
+        selected.value;
+
+
+    if (
+        !Object.prototype.hasOwnProperty.call(
+            pollVotes,
+            song
+        )
+    ) {
+
+        pollVotes[song] = 0;
+
+    }
+
+
+    pollVotes[song]++;
+
+
+    localStorage.setItem(
+        POLL_KEY,
+        JSON.stringify(pollVotes)
+    );
+
+
+    result.innerHTML =
+        "🔥 Vote submitted for <strong>" +
+        song +
+        "</strong>!";
+
+
+    updateResults();
+
+}
+
+
+updateResults();
+
+</script>
 
 </body>
-
 </html>
